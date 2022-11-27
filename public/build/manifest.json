@@ -418,14 +418,6 @@
       "__plugin-vue_export-helper.cdc0426e.js"
     ]
   },
-  "AuthenticatedLayout.css": {
-    "file": "assets/AuthenticatedLayout.5fc8292d.css",
-    "src": "AuthenticatedLayout.css"
-  },
-  "resources/js/app.css": {
-    "file": "assets/app.c30d02ba.css",
-    "src": "resources/js/app.css"
-  },
   "resources/js/Pages/Home/Partials/Navbar.css": {
     "file": "assets/Navbar.7a05a39b.css",
     "src": "resources/js/Pages/Home/Partials/Navbar.css"
@@ -433,5 +425,13 @@
   "resources/js/Pages/Home/Partials/Banner.css": {
     "file": "assets/Banner.bdd0a213.css",
     "src": "resources/js/Pages/Home/Partials/Banner.css"
+  },
+  "AuthenticatedLayout.css": {
+    "file": "assets/AuthenticatedLayout.5fc8292d.css",
+    "src": "AuthenticatedLayout.css"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app.c30d02ba.css",
+    "src": "resources/js/app.css"
   }
 }
