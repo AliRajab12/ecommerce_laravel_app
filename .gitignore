@@ -4,6 +4,7 @@
 /public/storage
 /storage/*.key
 /vendor
+!venodr/tightenco
 .env
 .env.backup
 .env.production
