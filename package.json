@@ -32,6 +32,7 @@
         "@fortawesome/vue-fontawesome": "^3.0.2",
         "font-awesome": "^4.7.0",
         "swiper": "^8.4.5",
-        "tw-elements": "^1.0.0-alpha12"
+        "tw-elements": "^1.0.0-alpha12",
+        "ziggy-js": "^2.3.0"
     }
 }
