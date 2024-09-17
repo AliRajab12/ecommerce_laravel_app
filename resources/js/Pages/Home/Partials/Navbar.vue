@@ -2,18 +2,20 @@
 import { ref , onMounted} from 'vue'
 import CategoriesDropdown from './CategoriesDropdown.vue';
 import { Link } from '@inertiajs/inertia-vue3'
+import { useGeneralStore } from '@/Stores/general';
 
 const isOpen = ref(false);
 function toggleNavbar() {
             this.isOpen = !this.isOpen;
         }
 
-defineProps({
-    canLogin: Boolean,
-    canRegister: Boolean,
+const props = defineProps({
+    canLogin: useGeneralStore.canLogin,
+    canRegister: useGeneralStore.canLogin,
     categories: Object,
     products: Object
     });
+    console.log(props.canLogin)
 
 </script>
 <style>
@@ -42,7 +44,7 @@ defineProps({
                 <a href="/"  class="nav-link block py-2 pl-3 pr-4  text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
               </li> -->
               <!-- <li class="nav-item"> -->
-               
+
                 <Link href="/products" :class="{ 'active': $page.url === '/products' }"  class="nav-link block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-400 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Products</Link>
                 <!-- :href="route('products')" -->
               <!-- </li> -->
@@ -51,10 +53,10 @@ defineProps({
               </li>
               <Link href="/services" :class="{ 'active': $page.url === '/services' }" class="nav-link block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-400 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</Link>
               <Link href="#"  class="nav-link block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-400 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</Link>
-            
+
             </ul>
-            
-             
+
+
           </div>
           <div :class="{'hidden': !isOpen, 'flex':isOpen}"   class="w-full md:block md:w-auto" id="navbar-dropdown">
             <ul v-if="canLogin" class="flex flex-col p-4 mt-2 items-center rounded-lg  md:flex-row  md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 lg">
@@ -65,12 +67,12 @@ defineProps({
                     <Link :href="route('login')" class="nav-link text-sm text-gray-700 dark:text-gray-500 underline">Login</Link>
                     <Link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</Link>
                 </template>
-            </ul>  
+            </ul>
             </div>
         </div>
       </nav>
 
-       
+
 </template>
 
 <style>

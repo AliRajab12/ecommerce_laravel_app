@@ -18,7 +18,7 @@
         "laravel-vite-plugin": "^0.6.0",
         "lodash": "^4.17.19",
         "numeral": "^2.0.6",
-        "pinia": "^2.0.25",
+        "pinia": "^2.0.27",
         "postcss": "^8.4.18",
         "tailwindcss": "^3.2.1",
         "vite": "^3.0.0",

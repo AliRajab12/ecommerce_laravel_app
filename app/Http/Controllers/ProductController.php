@@ -27,25 +27,28 @@ class ProductController extends Controller
 
         $products = json_decode($response->getBody(),true);
 
-        if(Product::count() == 0){
-            foreach($products as $product){
-                Product::updateOrCreate(
-                        ['product_id' => $product["id"]],
-                        [
-                            'product_id' => $product["id"],
-                            'title' => $product["title"],
-                            'price' => $product["price"],
-                            'description' => $product["description"],
-                            'category' => $product["category"],
-                            'image' => $product["image"],
-                            'rate' => $product["rating"]["rate"],
-                            'count' => $product["rating"]["count"],
-                        ],
-                );
-
-            }
-        }
-        return response()->json(["products" => (Product::count() == 0) ? $products : Product::all() ]);
+        // if(Product::count() == 0){
+        //     foreach($products as $product){
+        //         try{
+        //         Product::updateOrCreate(
+        //                 ['product_id' => $product["id"]],
+        //                 [
+        //                     'product_id' => $product["id"],
+        //                     'title' => $product["title"],
+        //                     'price' => $product["price"],
+        //                     'description' => $product["description"],
+        //                     'category' => $product["category"],
+        //                     'image' => $product["image"],
+        //                     'rate' => $product["rating"]["rate"],
+        //                     'count' => $product["rating"]["count"],
+        //                 ],
+        //         );
+        //     }catch(Exception $e){
+        //     }
+        //     }
+        // }
+        // return response()->json(["products" => (Product::count() == 0) ? $products : Product::all() ]);
+        return response()->json(["products" =>  $products  ]);
 
     }
 

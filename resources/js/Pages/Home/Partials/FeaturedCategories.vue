@@ -1,4 +1,4 @@
-<template>
+<template #featuredCategories>
     <section>
     <h2 class="text-center text-3xl font-bold whitespace-nowrap dark:text-white pt-10">Featured Categories</h2>
             <div class="container px-5 py-2 mx-auto pt-10 lg:px-32">

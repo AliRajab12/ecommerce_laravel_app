@@ -1,5 +1,5 @@
 <template>
-    <Navbar :categories= categories></Navbar>
+    <MainLayout :categories= categoryStore.categories>
     <div class="overflow-hidden dark:bg-gray-900">
           <div class="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
               <div class="flex justify-center items-center lg:flex-row flex-col gap-8">
@@ -81,23 +81,20 @@
               </div>
           </div>
         </div>
-        <Footer/>
+    </MainLayout>
   </template>
 
   <script setup>
 import { ref , onMounted} from 'vue'
-import Navbar from '../Home/Partials/Navbar.vue';
-import Footer from '../Home/Partials/Footer.vue';
+import { useCategoryStore } from '@/Stores/category';
+import MainLayout from '../../Layouts/MainLayout.vue';
+  const categoryStore = useCategoryStore();
+
   const counter = ref(1);
-  const categories =  ref([]);
 
   defineProps({
     product: Object
 })
-
-async function loadCategories(){
-    await axios.get("/categories").then(response => categories.value = response.data.categories).catch(error => console.log(error));
-    }
 
 
   function plus(){
@@ -111,8 +108,6 @@ async function loadCategories(){
     }
   }
   onMounted( () => {
-
-loadCategories();
 });
   </script>
 

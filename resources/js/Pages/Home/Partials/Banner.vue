@@ -1,4 +1,4 @@
-<template>
+<template #banner>
         <swiper
         :centeredSlides="true"
         :autoplay="{
@@ -18,7 +18,7 @@
                         <h1>Get a jump on joy<br> <span>Shop holiday gifts</span></h1>
                             <div class="overlay"></div>
                         <img
-                            className="object-fill w-full h-full" 
+                            className="object-fill w-full h-full"
                             src="/images/carousel/slide_2.jpg"
                             alt="image slide 2"
                     />
@@ -31,7 +31,7 @@
                         <h1>Early Black Friday <br> <span>deals</span> are here <br></h1>
                             <div class="overlay"></div>
                         <img
-                            className="object-fill w-full h-full" 
+                            className="object-fill w-full h-full"
                             src="/images/carousel/slide_3.jpg"
                             alt="image slide 3"
                     />
@@ -44,7 +44,7 @@
                         <h1>Shop By <span>Category</span></h1>
                             <div class="overlay"></div>
                         <img
-                            className="object-fill w-full h-full" 
+                            className="object-fill w-full h-full"
                             src="/images/carousel/slide_1.jpg"
                             alt="image slide 1"
                     />

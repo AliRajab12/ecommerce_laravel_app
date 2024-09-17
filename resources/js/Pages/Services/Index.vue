@@ -1,24 +1,12 @@
 <script setup>
-import Navbar from '../Home/Partials/Navbar.vue';
-import axios from 'axios';
-import { ref , onMounted} from 'vue';
-import Footer from '../Home/Partials/Footer.vue';
-
-const categories =  ref([]);
+import MainLayout from '../../Layouts/MainLayout.vue';
+import { useCategoryStore } from '@/Stores/category';
 
 
-async function loadCategories(){
-    await axios.get("/categories").then(response => categories.value = response.data.categories).catch(error => console.log(error));
-    }
-     
-onMounted( () => {
-
-         loadCategories();
-      });
-
+const categoryStore = useCategoryStore();
 </script>
-<template>
-    <Navbar :categories= categories></Navbar>
-    <h1 class="container">Hello World</h1>
-    <Footer/>
+<template #services>
+    <MainLayout  :categories=categoryStore.categories>
+        <h1 class="container">Hello World</h1>
+    </MainLayout>
 </template>

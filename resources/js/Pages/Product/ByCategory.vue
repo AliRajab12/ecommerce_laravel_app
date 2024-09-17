@@ -1,5 +1,5 @@
 <template>
-    <Navbar :categories= categories></Navbar>
+    <MainLayout :categories= categoryStore.categories>
 
     <div class="grid container grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-10 mb-10  justify-items-center">
       <div v-for="product in products" track-by="id" v-if="products.length">
@@ -20,29 +20,19 @@
       </div>
   </div>
   </div>
-  <!-- Start Footer Section -->
-  <Footer/>
-  <!-- End Footer Section -->
+
+</MainLayout>
+
 
   </template>
 
   <script setup>
-  import Navbar from '../Home/Partials/Navbar.vue';
-  import Footer from '../Home/Partials/Footer.vue';
+  import MainLayout from '../../Layouts/MainLayout.vue';
   import { Link } from '@inertiajs/inertia-vue3'
-  import { ref , onMounted} from 'vue';
+  import { useCategoryStore } from '@/Stores/category';
 
-  const categories =  ref([]);
-
+  const categoryStore = useCategoryStore();
   defineProps({
     products: Object,
-
   });
-   async function loadCategories(){
-        await axios.get("/categories").then(response => categories.value = response.data.categories).catch(error => console.log(error));
-    }
-
-    onMounted( () => {
-         loadCategories();
-      });
   </script>
