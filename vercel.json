@@ -4,7 +4,7 @@
       {
         "src": "public/index.php",
         "use": "@vercel/php",
-        "config": { "runtime": "php-8.0.x" }  // or any version supported by Vercel
+        "config": { "runtime": "php-8.0.x" } 
       },
       {
         "src": "resources/js/app.js",
